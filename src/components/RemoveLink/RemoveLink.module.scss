@@ -1,0 +1,25 @@
+.removeLink {
+  text-align: center;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.link {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.buttons {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin: 0 10px;
+  }
+}

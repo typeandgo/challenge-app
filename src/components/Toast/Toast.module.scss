@@ -1,0 +1,32 @@
+.toast {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  top: 40px;
+  right: 0;
+  transform: translateY(-100px);
+  animation: slideDown 3s;
+}
+
+.toastBody {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ccffd7;
+  border-radius: var(--border-radius);
+  border: 1px solid #2dd100;
+  font-size: 20px;
+  color: #2dd100;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+}
+
+@keyframes slideDown {
+  0%,
+  100% {
+    -webkit-transform: translateY(-100px);
+  }
+  10%,
+  90% {
+    -webkit-transform: translateY(0px);
+  }
+}

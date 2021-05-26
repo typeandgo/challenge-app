@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0,0,0, 0.2);  
+}
+
+.brandName {
+  font-size: 22px;
+  font-weight: 300;
+
+  strong {
+    font-weight: 900;
+  }
+
+  span {
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,42 @@
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    margin: 0 !important;
+
+    li {
+      padding: 2px 5px;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--bg-color);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  button {
+    padding: 5px 8px;
+    margin: 0 5px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--bg-color);
+      border-radius: 4px;
+    }
+  }
+}
+
+.active {
+  background-color: var(--bg-color);
+  border-radius: 4px;
+  font-weight: 700;
+}
