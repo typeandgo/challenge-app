@@ -8,9 +8,9 @@ const RemoveLink = ({ data, onOk, onCancel }) => {
       <h4 className={ styles.title }>Do you want to remove:</h4>
       <p className={ styles.link }>{ data?.linkName }</p>
 
-      <div className={ styles.buttons }>
-        <button onClick={ () => onOk(data) }>OK</button>
-        <button onClick={ onCancel }>CANCEL</button>
+      <div className={ styles.buttons } data-test='removeLinkButtons'>
+        <button onClick={ () => onOk(data) } data-test='removeLinkOkButton'>OK</button>
+        <button onClick={ onCancel } data-test='removeLinkCancelButton'>CANCEL</button>
       </div>
     </div>
   );

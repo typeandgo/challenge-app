@@ -74,6 +74,11 @@ const Home = () => {
     modalClose();
     setToastData(data.linkName);
     setIsToastActive(true);
+
+    if (updatedLinks.length <= PAGE_SIZE) {
+      setCurrentPage(1);
+    }
+
     loadData();
   }
 
@@ -91,7 +96,7 @@ const Home = () => {
       <AddLinkButton />
 
       { 
-        sortedLinks.length > 0
+        links.length > 0
         && <div className={ styles.listContainer }>
 
           <div className={ styles.list }>
@@ -116,18 +121,16 @@ const Home = () => {
           </div>
 
           { 
-            sortedLinks.length > 5 
+            links.length > 5 
             &&
             <Pagination
               currentPage={ currentPage }
               pageSize={ PAGE_SIZE }
-              totalItems={ sortedLinks.length }
+              totalItems={ links.length }
               paginate={ pageNumber => setCurrentPage(pageNumber) } />  
           }
         </div>
       }
-
-      
 
       <Modal title='Remove Link' show={ isModalActive } onClose={ modalClose }>
         <RemoveLink

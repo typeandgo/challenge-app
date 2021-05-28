@@ -6,27 +6,27 @@ import styles from './ListItem.module.scss';
 const ListItem = ({id, linkName, linkUrl, votes, upVote, downVote, deleteLink}) => {
   return (
     <li className={ styles.listItem }>
-      <button className={ styles.delete } title='Delete' onClick={ () => deleteLink({id, linkName}) }><FontAwesomeIcon icon={faMinusCircle} /></button>
+      <button className={ styles.delete } title='Delete' onClick={ () => deleteLink({id, linkName}) } data-test='deleteButton'><FontAwesomeIcon icon={faMinusCircle} /></button>
       
-      <div className={ styles.points }>
+      <div className={ styles.points } data-test='points'>
         <span>{ votes }</span>
         POINTS
       </div>
 
-      <div className={ styles.content }>
+      <div className={ styles.content } data-test='linkItemContent'>
         
         <h3>{ linkName }</h3>
         
         <p onClick={ () => window.open(linkUrl) } title={ linkUrl }>({ linkUrl }) <FontAwesomeIcon icon={faExternalLinkAlt} /></p>
         
-        <div className={ styles.buttons }>
+        <div className={ styles.buttons } data-test='voteButtons'>
 
-          <button className={ styles.upVote } onClick={ () => upVote(id) } title='Up Vote'>
+          <button className={ styles.upVote } onClick={ () => upVote(id) } title='Up Vote' data-test='upVoteButton'>
             <FontAwesomeIcon icon={faChevronUp} />
             Up Vote
           </button>
 
-          <button className={ styles.downVote } onClick={ () => downVote(id) } title='Down Vote'>
+          <button className={ styles.downVote } onClick={ () => downVote(id) } title='Down Vote' data-test='downVoteButton'>
             <FontAwesomeIcon icon={faChevronDown} />
             Down Vote
           </button>
