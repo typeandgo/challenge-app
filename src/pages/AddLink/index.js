@@ -7,13 +7,8 @@ import Toast from 'components/Toast';
 import { Link } from 'react-router-dom';
 import InputField from 'components/InputField';
 import { isValidUrl } from 'utils/isValidUrl';
+import { validationMessages } from 'constants/index';
 import styles from './AddLink.module.scss';
-
-const validationMessages = {
-  requiredName: 'Please enter a name',
-  requiredUrl: 'Please enter a url',
-  invalidUrl: 'Url is invalid'
-};
 
 const AddLink = () => {
   const [linkName, setLinkName] = useState('');
@@ -82,9 +77,14 @@ const AddLink = () => {
 
       </form>
 
-      <Toast show={isToastActive} onClose={ toastClose }>
-        <span><strong>{ toastData }</strong> added.</span>
-      </Toast>
+      {
+        isToastActive
+        &&
+        <Toast onClose={ toastClose }>
+          <span><strong>{ toastData }</strong> added.</span>
+        </Toast>
+      }
+
     </Layout>
   );
 }

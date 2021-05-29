@@ -20,7 +20,7 @@ describe('ListItem', () => {
     mockWindowOpen.mockClear();
   });
 
-  test('Renders without chrash and correct content', () => {
+  test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<ListItem {...mockProps} />);
     const deleteButton = findByTestAttr(wrapper, 'deleteButton');
     const pointsWrapper = findByTestAttr(wrapper, 'points');
@@ -70,7 +70,7 @@ describe('ListItem', () => {
     expect(mockProps.deleteLink).toBeCalledWith({id: mockProps.id, linkName: mockProps.linkName});
   });
 
-  test('Triggering link `onClick` function', () => {
+  test('Triggering link `click` event', () => {
     const wrapper = shallow(<ListItem {...mockProps} />);
     
     wrapper.find('p').simulate('click');

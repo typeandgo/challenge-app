@@ -132,17 +132,24 @@ const Home = () => {
         </div>
       }
 
-      <Modal title='Remove Link' show={ isModalActive } onClose={ modalClose }>
-        <RemoveLink
-          data={ modalData }
-          onOk={ deleteLink }
-          onCancel={ modalClose } />
-      </Modal>
-
-      <Toast show={isToastActive} onClose={ toastClose }>
-        <span><strong>{ toastData }</strong> removed.</span>
-      </Toast>
-
+      {
+        isModalActive
+        &&
+        <Modal title='Remove Link' onClose={ modalClose }>
+          <RemoveLink
+            data={ modalData }
+            onOk={ deleteLink }
+            onCancel={ modalClose } />
+        </Modal>
+      }
+      
+      {
+        isToastActive
+        &&
+        <Toast onClose={ toastClose }>
+          <span><strong>{ toastData }</strong> removed.</span>
+        </Toast>
+      }
     </Layout>
   );
 }

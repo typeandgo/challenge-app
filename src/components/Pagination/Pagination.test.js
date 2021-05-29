@@ -13,7 +13,7 @@ describe('Pagination', () => {
     paginate: jest.fn()
   };
 
-  test('Renders without chrash and correct content', () => {
+  test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<Pagination {...mockProps} />);
     const prevButton = findByTestAttr(wrapper, 'prevButton');
     const nextButton = findByTestAttr(wrapper, 'nextButton');
@@ -74,7 +74,7 @@ describe('Pagination', () => {
     expect(mockProps.paginate).toBeCalledWith(5);
   });
 
-  test('Triggering page number `click` function', () => {
+  test('Triggering page number `click` event', () => {
     const wrapper = shallow(<Pagination {...mockProps} />);
     const pageNumberButton = findByTestAttr(wrapper, 'pageNumber-4');
     

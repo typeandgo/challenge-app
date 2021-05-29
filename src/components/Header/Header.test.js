@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Header from '../Header';
 
 describe('Header', () => {
-  test('Renders without chrash and correct content', () => {
+  test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<Header />);
   
     expect(wrapper.find('img')).toHaveLength(1);

@@ -11,7 +11,7 @@ describe('Select', () => {
     target: { value: mockSelectValue }
   };
 
-  test('Renders without chrash and correct content', () => {
+  test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<Select defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
     const options = wrapper.find('option').getElements();
 
@@ -31,7 +31,7 @@ describe('Select', () => {
     expect(options[0].props.disabled).toEqual(true);
   });
 
-  test('Triggering `onChange` function', () => {
+  test('Triggering `change` event', () => {
     const wrapper = shallow(<Select defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
     
     wrapper.simulate('change', mockEvent);

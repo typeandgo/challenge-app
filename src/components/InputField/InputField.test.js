@@ -12,7 +12,7 @@ describe('InputField', () => {
     target: { value: mockInputValue }
   };
 
-  test('Renders without chrash and correct content', () => {
+  test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<InputField name={ mockInputName } onChange={ mockOnChangeFunc } />);
   
     expect(wrapper.find('input')).toHaveLength(1);

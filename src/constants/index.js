@@ -7,3 +7,9 @@ export const sortTypes = {
   ASC_BY_VOTES: 'ASC_BY_VOTES',
   DESC_BY_VOTES: 'DESC_BY_VOTES'
 }
+
+export const validationMessages = {
+  requiredName: 'Please enter a name',
+  requiredUrl: 'Please enter a url',
+  invalidUrl: 'Url is invalid'
+};
