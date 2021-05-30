@@ -36,9 +36,9 @@ const Home = () => {
   }
 
   const upVote = id => {
-    let voteItemIndex = links.findIndex(item => item.id === id);
-    links[voteItemIndex].votes += 1;
-    links[voteItemIndex].updateDate = Date.now();
+    let votedItemIndex = links.findIndex(item => item.id === id);
+    links[votedItemIndex].votes += 1;
+    links[votedItemIndex].updateDate = Date.now();
     
     localStorage.setItem(STORE_NAME, JSON.stringify(links));
 
@@ -46,9 +46,9 @@ const Home = () => {
   };
 
   const downVote = id => {
-    let voteItemIndex = links.findIndex(item => item.id === id);
-    links[voteItemIndex].votes -= 1;
-    links[voteItemIndex].updateDate = Date.now();
+    let votedItemIndex = links.findIndex(item => item.id === id);
+    links[votedItemIndex].votes -= 1;
+    links[votedItemIndex].updateDate = Date.now();
     
     localStorage.setItem(STORE_NAME, JSON.stringify(links));
 
@@ -101,7 +101,10 @@ const Home = () => {
 
           <div className={ styles.list }>
 
-            <SortSelect defaultValue={ sortType } onChange={ sortTypeName => setSortType(sortTypeName) } />
+            <SortSelect defaultValue={ sortType } onChange={ sortTypeName => {
+              setCurrentPage(1);
+              setSortType(sortTypeName);
+            } } />
 
             <ul>
               {

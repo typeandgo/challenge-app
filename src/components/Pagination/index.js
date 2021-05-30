@@ -24,7 +24,7 @@ const Pagination = ({currentPage, pageSize, totalItems, paginate}) => {
   return (
     <div className={styles.pagination}>
 
-      <button onClick={ prevPage } title='Previous' data-test='prevButton'>
+      <button onClick={ prevPage } disabled={ currentPage === 1 } title='Previous' data-test='prevButton'>
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
 
@@ -42,7 +42,7 @@ const Pagination = ({currentPage, pageSize, totalItems, paginate}) => {
         }
       </ul>
 
-      <button onClick={ nextPage } title='Next' data-test='nextButton'>
+      <button onClick={ nextPage } disabled={ currentPage === totalPages } title='Next' data-test='nextButton'>
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
       
