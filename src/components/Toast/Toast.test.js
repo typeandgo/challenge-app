@@ -17,7 +17,7 @@ describe('Toast', () => {
     onClose: jest.fn()
   };
 
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = mount(<Toast {...mockProps} />);
     
     expect(wrapper.find('.toastBody')).toHaveLength(1);

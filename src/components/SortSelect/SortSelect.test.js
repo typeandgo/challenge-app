@@ -11,7 +11,7 @@ describe('SortSelect', () => {
     target: { value: mockSelectValue }
   };
 
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = shallow(<SortSelect defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
     const options = wrapper.find('option').getElements();
 

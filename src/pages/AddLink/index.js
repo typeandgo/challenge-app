@@ -7,7 +7,7 @@ import Toast from 'components/Toast';
 import { Link } from 'react-router-dom';
 import InputField from 'components/InputField';
 import { isValidUrl } from 'utils/isValidUrl';
-import { validationMessages } from 'constants/index';
+import { STORE_NAME, validationMessages } from 'constants/index';
 import styles from './AddLink.module.scss';
 
 const AddLink = () => {
@@ -49,10 +49,10 @@ const AddLink = () => {
         updateDate: dateNow
       };
 
-      const linksData = JSON.parse(localStorage.getItem('links')) || [];
+      const linksData = JSON.parse(localStorage.getItem(STORE_NAME)) || [];
       const updatedLinksData = [...linksData, data];
 
-      localStorage.setItem('links', JSON.stringify(updatedLinksData));
+      localStorage.setItem(STORE_NAME, JSON.stringify(updatedLinksData));
 
       setLinkName('');
       setLinkUrl('');

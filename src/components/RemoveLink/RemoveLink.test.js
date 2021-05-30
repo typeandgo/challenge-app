@@ -10,7 +10,7 @@ describe('RemoveLink', () => {
     linkName: 'Lorem'
   }
   
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = shallow(<RemoveLink onOk={ mockOnOkFunc } onCancel={ mockOnCancelFunc } />);
     const buttonsWrapper = findByTestAttr(wrapper, 'buttons');
     const onOKButton = findByTestAttr(wrapper, 'okButton');

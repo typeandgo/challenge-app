@@ -8,7 +8,7 @@ import RemoveLink from 'components/RemoveLink';
 import SortSelect from 'components/SortSelect';
 import ListItem from 'components/ListItem';
 import Pagination from 'components/Pagination';
-import { PAGE_SIZE, sortTypes } from 'constants/index';
+import { STORE_NAME, PAGE_SIZE, sortTypes } from 'constants/index';
 import { sort } from 'utils/sort';
 import styles from './Home.module.scss';
 
@@ -40,7 +40,7 @@ const Home = () => {
     links[voteItemIndex].votes += 1;
     links[voteItemIndex].updateDate = Date.now();
     
-    localStorage.setItem('links', JSON.stringify(links));
+    localStorage.setItem(STORE_NAME, JSON.stringify(links));
 
     loadData();
   };
@@ -50,7 +50,7 @@ const Home = () => {
     links[voteItemIndex].votes -= 1;
     links[voteItemIndex].updateDate = Date.now();
     
-    localStorage.setItem('links', JSON.stringify(links));
+    localStorage.setItem(STORE_NAME, JSON.stringify(links));
 
     loadData();
   };
@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   const loadData = () => {
-    const linksData = JSON.parse(localStorage.getItem('links')) || [];
+    const linksData = JSON.parse(localStorage.getItem(STORE_NAME)) || [];
 
     setLinks(linksData);
 
@@ -73,7 +73,7 @@ const Home = () => {
   const deleteLink = data => {
     const updatedLinks = links.filter(item => item.id !== data.id);
 
-    localStorage.setItem('links', JSON.stringify(updatedLinks));
+    localStorage.setItem(STORE_NAME, JSON.stringify(updatedLinks));
 
     modalClose();
     setToastData(data.linkName);

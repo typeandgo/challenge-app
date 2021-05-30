@@ -11,7 +11,7 @@ import AddLink from '../AddLink';
 describe('AddLink', () => {
   const history = createMemoryHistory();
   
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = mount(<Router history={ history }><AddLink /></Router>);
     const pageTitle = findByTestAttr(wrapper, 'pageTitle');
     const inputLinkName = findByTestAttr(wrapper, 'inputLinkName');

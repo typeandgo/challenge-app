@@ -5,11 +5,8 @@ import Home from 'pages/Home';
 import AddLink from 'pages/AddLink';
 import App from '../App';
 
-jest.fn().mockImplementation(Home => <div>Home</div>);
-jest.fn().mockImplementation(AddLink => <div>AddLink</div>);
-
 describe('AddLinkButton', () => {
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = shallow(<App />);
   
     expect(wrapper.find(Router)).toHaveLength(1);

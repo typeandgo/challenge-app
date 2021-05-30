@@ -1,3 +1,5 @@
+export const STORE_NAME = 'links';
+
 export const PAGE_SIZE = 5;
 
 export const TOAST_TIMEOUT = 3000;

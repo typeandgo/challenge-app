@@ -13,7 +13,7 @@ describe('Pagination', () => {
     paginate: jest.fn()
   };
 
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = shallow(<Pagination {...mockProps} />);
     const prevButton = findByTestAttr(wrapper, 'prevButton');
     const nextButton = findByTestAttr(wrapper, 'nextButton');

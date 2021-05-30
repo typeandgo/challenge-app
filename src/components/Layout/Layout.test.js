@@ -4,7 +4,7 @@ import Header from 'components/Header';
 import Layout from '../Layout';
 
 describe('Layout', () => {
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const mockChildren = <div>Test</div>
     const wrapper = shallow(<Layout>{ mockChildren }</Layout>);
   

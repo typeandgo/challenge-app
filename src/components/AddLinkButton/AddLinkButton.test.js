@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AddLinkButton from '../AddLinkButton';
 
 describe('AddLinkButton', () => {
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = shallow(<AddLinkButton />);
   
     expect(wrapper.find('span').text()).toEqual('SUBMIT A LINK');

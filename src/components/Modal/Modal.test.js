@@ -16,7 +16,7 @@ describe('Modal', () => {
     onClose: jest.fn()
   };
 
-  test('Renders without crash and with expected structure', () => {
+  test('Renders without crashing and with expected structure', () => {
     const wrapper = mount(<Modal {...mockProps} />);
     
     expect(wrapper.find('.content')).toHaveLength(1);
