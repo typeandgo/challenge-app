@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Layout from 'components/Layout';
 import Toast from 'components/Toast';
-import { Link } from 'react-router-dom';
 import InputField from 'components/InputField';
 import { isValidUrl } from 'utils/isValidUrl';
 import { STORE_NAME, validationMessages } from 'constants/index';

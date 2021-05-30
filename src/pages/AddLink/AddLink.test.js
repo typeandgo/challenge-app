@@ -1,7 +1,5 @@
 import React from 'react';
-import { createMemoryHistory } from 'history';
-import { Link, Router } from 'react-router-dom';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Layout from 'components/Layout';
 import InputField from 'components/InputField';
@@ -9,25 +7,23 @@ import { findByTestAttr } from 'utils/testUtils';
 import AddLink from '../AddLink';
 
 describe('AddLink', () => {
-  const history = createMemoryHistory();
-  
   test('Renders without crashing and with expected structure', () => {
-    const wrapper = mount(<Router history={ history }><AddLink /></Router>);
+    const wrapper = shallow(<AddLink />);
     const pageTitle = findByTestAttr(wrapper, 'pageTitle');
     const inputLinkName = findByTestAttr(wrapper, 'inputLinkName');
     const inputLinkUrl = findByTestAttr(wrapper, 'inputLinkUrl');
 
     expect(wrapper.find(Layout)).toHaveLength(1);
     expect(wrapper.find('.form')).toHaveLength(1);
-    expect(wrapper.find(Link)).toHaveLength(1);
-    expect(wrapper.find(Link).find(FontAwesomeIcon)).toHaveLength(1);
+    expect(wrapper.find('.link')).toHaveLength(1);
+    expect(wrapper.find('.link').find(FontAwesomeIcon)).toHaveLength(1);
     expect(wrapper.find(InputField)).toHaveLength(2);
-    expect(wrapper.find('h2')).toHaveLength(2);
+    expect(wrapper.find('h2')).toHaveLength(1);
     expect(wrapper.find('button')).toHaveLength(1);
 
-    expect(wrapper.find(Link).props().to).toEqual('/');
-    expect(wrapper.find(Link).props().title).toEqual('Return to List');
-    expect(wrapper.find(Link).text()).toEqual('Return to List');
+    expect(wrapper.find('.link').props().to).toEqual('/');
+    expect(wrapper.find('.link').props().title).toEqual('Return to List');
+    expect(wrapper.find('.link').text()).toEqual('<FontAwesomeIcon />Return to List');
 
     expect(pageTitle.text()).toEqual('Add New Link');
 

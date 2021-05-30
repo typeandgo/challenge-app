@@ -15,11 +15,11 @@ const RemoveLink = ({ data, onOk, onCancel }) => {
 
       <div className={ styles.buttons } data-test='buttons'>
 
-        <button onClick={ () => onOk(data) } data-test='okButton'>
+        <button onClick={ () => onOk(data) } data-test='okButton' title='Ok'>
           OK
         </button>
 
-        <button onClick={ onCancel } data-test='cancelButton'>
+        <button onClick={ onCancel } data-test='cancelButton' title='Cancel'>
           CANCEL
         </button>
 

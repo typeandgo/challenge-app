@@ -17,25 +17,30 @@ describe('RemoveLink', () => {
     const onCancelButton = findByTestAttr(wrapper, 'cancelButton');
     
     expect(wrapper.props().className).toEqual('removeLink');
-    expect(wrapper.find('h4')).toHaveLength(1);
-    expect(wrapper.find('p')).toHaveLength(1);
-    expect(wrapper.find('div')).toHaveLength(2);
+    expect(wrapper.find('.title')).toHaveLength(1);
+    expect(wrapper.find('.link')).toHaveLength(1);
+    expect(wrapper.find('.buttons')).toHaveLength(1);
+
     expect(buttonsWrapper).toHaveLength(1);
     expect(buttonsWrapper.find('button')).toHaveLength(2);
+
     expect(onOKButton).toHaveLength(1);
     expect(onCancelButton).toHaveLength(1);
     expect(onOKButton.text()).toEqual('OK');
     expect(onCancelButton.text()).toEqual('CANCEL');
-    expect(wrapper.find('h4').text()).toEqual('Do you want to remove:');
-    expect(wrapper.find('h4').props().className).toEqual('title');
-    expect(wrapper.find('p').text()).toEqual('');
-    expect(wrapper.find('p').props().className).toEqual('link');
+    expect(onOKButton.props().title).toEqual('Ok');
+    expect(onCancelButton.props().title).toEqual('Cancel');
+
+    expect(wrapper.find('.title').text()).toEqual('Do you want to remove:');
+    expect(wrapper.find('.title').props().className).toEqual('title');
+    expect(wrapper.find('.link').text()).toEqual('');
+    expect(wrapper.find('.link').props().className).toEqual('link');
   });
 
   test('With `data` prop', () => {
     const wrapper = shallow(<RemoveLink onOk={ mockOnOkFunc } onCancel={ mockOnCancelFunc } data={ mockData } />);
     
-    expect(wrapper.find('p').text()).toEqual(mockData.linkName);
+    expect(wrapper.find('.link').text()).toEqual(mockData.linkName);
   });
 
   test('Triggering `onOk` function', () => {
