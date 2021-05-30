@@ -34,11 +34,11 @@ describe('AddLink', () => {
     expect(wrapper.find('button').props().type).toEqual('submit');
     expect(wrapper.find('button').text()).toEqual('ADD');
 
-    expect(inputLinkName.props().name).toEqual('Link Name');
+    expect(inputLinkName.props().name).toEqual('linkName');
     expect(inputLinkName.props().value).toEqual('');
     expect(inputLinkName.props().error).toBeFalsy();
 
-    expect(inputLinkUrl.props().name).toEqual('Link Url');
+    expect(inputLinkUrl.props().name).toEqual('linkUrl');
     expect(inputLinkUrl.props().value).toEqual('');
     expect(inputLinkUrl.props().error).toBeFalsy();
   });

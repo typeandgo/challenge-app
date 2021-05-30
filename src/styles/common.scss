@@ -32,3 +32,16 @@ button {
     background-color: var(--bg-color-darker);
   }
 }
+
+::placeholder {
+  color: rgba(0,0,0, 0.2);
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: rgba(0,0,0, 0.2);
+}
+
+::-ms-input-placeholder {
+  color: rgba(0,0,0, 0.2);
+}

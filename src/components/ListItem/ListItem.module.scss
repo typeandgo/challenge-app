@@ -25,7 +25,9 @@
 }
 
 .votes {
-  font-size: 14px;
+  width: 72px;
+  height: 72px;
+  font-size: 12px;
   text-align: center;
   display: block;
   background-color: var(--bg-color);
@@ -57,11 +59,13 @@
     margin: 0 0 10px;
     font-size: 11px;
     font-weight: 400;
+    opacity: 0.7;
     word-break: break-all;
 
     &:hover {
       text-decoration: underline;
       cursor: pointer;
+      opacity: 1;
     }
 
     svg {
@@ -81,11 +85,13 @@
     background-color: transparent;
     border: none;
     border-radius: var(--border-radius);
+    opacity: 0.7;
     cursor: pointer;
 
     &:hover {
       background-color: var(--bg-color-darker);
-      color: var(--black)
+      color: var(--black);
+      opacity: 1;
     }
 
     svg {
@@ -105,6 +111,7 @@
   font-size: 30px;
   color: var(--red);
   background-color: var(--white);
+  box-shadow: 3px 3px 10px 0px var(--border-color);
   border: none;
   border-radius: 50%;
   cursor: pointer;

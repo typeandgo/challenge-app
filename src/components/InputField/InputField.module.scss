@@ -1,5 +1,5 @@
 .inputField {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 14px;
 
   input {
@@ -11,19 +11,19 @@
     margin-top: 3px;
   }
 
-  span {
+  .error {
     display: none;
     margin-top: 3px;
     font-size: 10px;
   }
 }
 
-.error {
+.hasError {
   input {
     border: 1px solid var(--red);
   }
 
-  span {
+  .error {
     display: block;
     color: var(--red);
   }

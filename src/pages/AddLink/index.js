@@ -75,14 +75,18 @@ const AddLink = () => {
         </h2>
 
         <InputField
-          name='Link Name'
+          title='Link Name'
+          name='linkName'
+          placeholder='e.g. Alphabet'
           value={ linkName }
           error={ inputErrors?.linkName }
           onChange={ value => setLinkName(value) }
           data-test='inputLinkName' />
 
         <InputField
-          name='Link Url'
+          title='Link Url'
+          name='linkUrl'
+          placeholder='e.g. http://abc.xyz'
           value={ linkUrl }
           error={ inputErrors?.linkUrl }
           onChange={ value => setLinkUrl(value) }
