@@ -31,7 +31,7 @@ describe('ListItem', () => {
 
     expect(wrapper.props().className).toEqual('listItem');
     
-    expect(pointsWrapper.props().className).toEqual('points');
+    expect(pointsWrapper.props().className).toEqual('votes');
     expect(pointsWrapper.text()).toEqual(mockProps.votes + 'POINTS');
     expect(pointsWrapper.find('span')).toHaveLength(1);
     

@@ -12,13 +12,11 @@ const Toast = ({ children, onClose }) => {
     }, TOAST_TIMEOUT)
   }, []);
 
-  const toastContent = ReactDOM.createPortal(<div className={styles.toast}>
+  return ReactDOM.createPortal(<div className={styles.toast}>
     <div className={styles.toastBody}>
       { children }
     </div>
   </div>, document.getElementById('toast-root'));
-
-  return toastContent;
 }
 
 Toast.propTypes = {

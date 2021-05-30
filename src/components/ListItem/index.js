@@ -8,16 +8,22 @@ const ListItem = ({id, linkName, linkUrl, votes, upVote, downVote, deleteLink}) 
     <li className={ styles.listItem }>
       <button className={ styles.delete } title='Delete' onClick={ () => deleteLink({id, linkName}) } data-test='deleteButton'><FontAwesomeIcon icon={faMinusCircle} /></button>
       
-      <div className={ styles.points } data-test='points'>
-        <span>{ votes }</span>
+      <div className={ styles.votes } data-test='points'>
+        <span>
+          { votes }
+        </span>
         POINTS
       </div>
 
       <div className={ styles.content } data-test='linkItemContent'>
         
-        <h3>{ linkName }</h3>
+        <h3 className={ styles.name }>
+          { linkName }
+        </h3>
         
-        <p onClick={ () => window.open(linkUrl) } title={ linkUrl }>({ linkUrl }) <FontAwesomeIcon icon={faExternalLinkAlt} /></p>
+        <p className={ styles.url } onClick={ () => window.open(linkUrl) } title={ linkUrl }>
+          ({ linkUrl }) <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </p>
         
         <div className={ styles.buttons } data-test='voteButtons'>
 

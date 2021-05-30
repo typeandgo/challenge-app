@@ -65,15 +65,32 @@ const AddLink = () => {
     <Layout>
       <form className={ styles.form } onSubmit={ onSubmit }>
 
-        <Link to='/' title='Return to List'><FontAwesomeIcon icon={faArrowLeft} />Return to List</Link>
+        <Link to='/' title='Return to List' className={ styles.link }>
+          <FontAwesomeIcon icon={faArrowLeft} className={ styles.icon } />
+          Return to List
+        </Link>
 
-        <h2>Add New Link</h2>
+        <h2 data-test='pageTitle'>
+          Add New Link
+        </h2>
 
-        <InputField name='Link Name' value={ linkName } error={ inputErrors?.linkName } onChange={ value => setLinkName(value) } />
+        <InputField
+          name='Link Name'
+          value={ linkName }
+          error={ inputErrors?.linkName }
+          onChange={ value => setLinkName(value) }
+          data-test='inputLinkName' />
 
-        <InputField name='Link Url' value={ linkUrl } error={ inputErrors?.linkUrl } onChange={ value => setLinkUrl(value) } />
+        <InputField
+          name='Link Url'
+          value={ linkUrl }
+          error={ inputErrors?.linkUrl }
+          onChange={ value => setLinkUrl(value) }
+          data-test='inputLinkUrl' />
 
-        <button type='submit'>ADD</button>
+        <button type='submit'>
+          ADD
+        </button>
 
       </form>
 
@@ -81,7 +98,9 @@ const AddLink = () => {
         isToastActive
         &&
         <Toast onClose={ toastClose }>
-          <span><strong>{ toastData }</strong> added.</span>
+          <span>
+            <strong>{ toastData }</strong> added.
+          </span>
         </Toast>
       }
 

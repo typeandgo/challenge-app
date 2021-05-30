@@ -4,12 +4,12 @@ export const sort = (sortType, data) => {
   if ( sortType === sortTypes.ASC_BY_VOTES ) {
 
     return data.sort((a, b) => parseFloat(a.votes) - parseFloat(b.votes)
-      || parseFloat(b.updateDate) - parseFloat(a.updateDate)); // Second condition for: Last clicked move to top for those with the same votes
+      || parseFloat(b.updateDate) - parseFloat(a.updateDate)); // Second condition for: Moves to top of group last clicked for those with the same votes
 
   } else if ( sortType === sortTypes.DESC_BY_VOTES ) {
 
     return data.sort((a, b) => parseFloat(b.votes) - parseFloat(a.votes)
-      || parseFloat(b.updateDate) - parseFloat(a.updateDate)); // Seconf condition for: Last clicked move to top for those with the same votes
+      || parseFloat(b.updateDate) - parseFloat(a.updateDate)); // Seconf condition for: Moves to top of group last clicked for those with the same votes
 
   } else {
 

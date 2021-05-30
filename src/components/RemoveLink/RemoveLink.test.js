@@ -12,9 +12,9 @@ describe('RemoveLink', () => {
   
   test('Renders without crash and with expected structure', () => {
     const wrapper = shallow(<RemoveLink onOk={ mockOnOkFunc } onCancel={ mockOnCancelFunc } />);
-    const buttonsWrapper = findByTestAttr(wrapper, 'removeLinkButtons');
-    const onOKButton = findByTestAttr(wrapper, 'removeLinkOkButton');
-    const onCancelButton = findByTestAttr(wrapper, 'removeLinkCancelButton');
+    const buttonsWrapper = findByTestAttr(wrapper, 'buttons');
+    const onOKButton = findByTestAttr(wrapper, 'okButton');
+    const onCancelButton = findByTestAttr(wrapper, 'cancelButton');
     
     expect(wrapper.props().className).toEqual('removeLink');
     expect(wrapper.find('h4')).toHaveLength(1);
@@ -40,7 +40,7 @@ describe('RemoveLink', () => {
 
   test('Triggering `onOk` function', () => {
     const wrapper = shallow(<RemoveLink onOk={ mockOnOkFunc } onCancel={ mockOnCancelFunc } data={ mockData } />);
-    const onOKButton = findByTestAttr(wrapper, 'removeLinkOkButton');
+    const onOKButton = findByTestAttr(wrapper, 'okButton');
 
     onOKButton.simulate('click');
 
@@ -49,7 +49,7 @@ describe('RemoveLink', () => {
 
   test('Triggering `onCancel` function', () => {
     const wrapper = shallow(<RemoveLink onOk={ mockOnOkFunc } onCancel={ mockOnCancelFunc } data={ mockData } />);
-    const onCancelButton = findByTestAttr(wrapper, 'removeLinkCancelButton');
+    const onCancelButton = findByTestAttr(wrapper, 'cancelButton');
 
     onCancelButton.simulate('click');
 

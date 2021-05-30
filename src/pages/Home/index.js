@@ -5,7 +5,7 @@ import Modal from 'components/Modal';
 import Toast from 'components/Toast';
 import AddLinkButton from 'components/AddLinkButton';
 import RemoveLink from 'components/RemoveLink';
-import Select from 'components/Select';
+import SortSelect from 'components/SortSelect';
 import ListItem from 'components/ListItem';
 import Pagination from 'components/Pagination';
 import { PAGE_SIZE, sortTypes } from 'constants/index';
@@ -64,6 +64,10 @@ const Home = () => {
     const linksData = JSON.parse(localStorage.getItem('links')) || [];
 
     setLinks(linksData);
+
+    if (linksData.length <= PAGE_SIZE) {
+      setCurrentPage(1);
+    }
   }
 
   const deleteLink = data => {
@@ -74,10 +78,6 @@ const Home = () => {
     modalClose();
     setToastData(data.linkName);
     setIsToastActive(true);
-
-    if (updatedLinks.length <= PAGE_SIZE) {
-      setCurrentPage(1);
-    }
 
     loadData();
   }
@@ -101,7 +101,7 @@ const Home = () => {
 
           <div className={ styles.list }>
 
-            <Select defaultValue={ sortType } onChange={ sortTypeName => setSortType(sortTypeName) } />
+            <SortSelect defaultValue={ sortType } onChange={ sortTypeName => setSortType(sortTypeName) } />
 
             <ul>
               {
@@ -147,7 +147,9 @@ const Home = () => {
         isToastActive
         &&
         <Toast onClose={ toastClose }>
-          <span><strong>{ toastData }</strong> removed.</span>
+          <span>
+            <strong>{ toastData }</strong> removed.
+          </span>
         </Toast>
       }
     </Layout>

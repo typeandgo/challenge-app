@@ -19,15 +19,15 @@ describe('Modal', () => {
   test('Renders without crash and with expected structure', () => {
     const wrapper = mount(<Modal {...mockProps} />);
     
-    expect(wrapper.find('.modalContent')).toHaveLength(1);
-    expect(wrapper.find('.modalHeader')).toHaveLength(1);
-    expect(wrapper.find('.modalTitle')).toHaveLength(1);
-    expect(wrapper.find('.modalBody')).toHaveLength(1);
+    expect(wrapper.find('.content')).toHaveLength(1);
+    expect(wrapper.find('.header')).toHaveLength(1);
+    expect(wrapper.find('.title')).toHaveLength(1);
+    expect(wrapper.find('.body')).toHaveLength(1);
     expect(wrapper.find('button')).toHaveLength(1);
     expect(wrapper.find(FontAwesomeIcon)).toHaveLength(1);
     expect(wrapper.find('button').props().title).toEqual('Close');
-    expect(wrapper.find('.modalBody').text()).toEqual('Dolor sit amet')
-    expect(wrapper.find('.modalTitle').text()).toEqual('Lorem Ipsum');
+    expect(wrapper.find('.body').text()).toEqual('Dolor sit amet')
+    expect(wrapper.find('.title').text()).toEqual('Lorem Ipsum');
   });
 
   test('Triggering modal overlay `click` event', () => {

@@ -5,24 +5,24 @@ import ReactDom from 'react-dom';
 import styles from './Modal.module.scss';
 
 const Modal = ({ title, children, onClose }) => {
-  const modalContent = ReactDom.createPortal(<div className={ styles.modal } onClick={ onClose }>
-    <div className={ styles.modalContent } onClick={ e => e.stopPropagation() }>
+  return ReactDom.createPortal(<div className={ styles.modal } onClick={ onClose }>
+    <div className={ styles.content } onClick={ e => e.stopPropagation() }>
       
-      <div className={ styles.modalHeader }>
-        <h3 className={ styles.modalTitle }>
+      <div className={ styles.header }>
+        <h3 className={ styles.title }>
           { title }
         </h3>
 
-        <button className={ styles.modalCloseButton } onClick={ onClose } title='Close'><FontAwesomeIcon icon={faTimes} /></button>
+        <button className={ styles.button } onClick={ onClose } title='Close'>
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
       </div>
 
-      <div className={ styles.modalBody}>
+      <div className={ styles.body}>
         { children }
       </div>
     </div>
-  </div>, document.getElementById('modal-root'));
-
-  return modalContent;
+  </div>, document.getElementById('modal-root'));;
 }
 
 Modal.propTypes = {

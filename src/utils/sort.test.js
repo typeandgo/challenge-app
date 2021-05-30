@@ -3,7 +3,7 @@ import { sort } from './sort';
 
 describe('sort', () => {
 
-  const input = [
+  const mockInput = [
     {
       id: 1,
       linkName: 'Lorem',
@@ -49,25 +49,25 @@ describe('sort', () => {
   test('Returns given data with expected order when sortType equal to `DESC_BY_CREATE_DATE`', () => {
     // NOTE: crateDate bigger comes first-order
     
-    const result = sort(sortTypes.DESC_BY_CREATE_DATE, input);
+    const result = sort(sortTypes.DESC_BY_CREATE_DATE, mockInput);
   
     expect(result[0].id).toEqual(5);
   });
 
   test('Returns given data with expected order when sortType equal to `ASC_BY_VOTES`', () => {
     // NOTE: votes smaller comes first-order
-    // according to condition if there is plural votes than, updateDate bigger comes first-order
+    // according to condition if there is plural same votes than, updateDate bigger comes first-order
 
-    const result = sort(sortTypes.ASC_BY_VOTES, input);
+    const result = sort(sortTypes.ASC_BY_VOTES, mockInput);
   
     expect(result[0].id).toEqual(4);
   });
 
   test('Returns given data with expected order when sortType equal to `DESC_BY_VOTES`', () => {
     // NOTE: votes bigger comes first-order
-    // according to condition if there is plural votes than, updateDate bigger comes first-order
+    // according to condition if there is plural same votes than, updateDate bigger comes first-order
 
-    const result = sort(sortTypes.DESC_BY_VOTES, input);
+    const result = sort(sortTypes.DESC_BY_VOTES, mockInput);
   
     expect(result[0].id).toEqual(5);
   });

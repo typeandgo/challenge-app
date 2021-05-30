@@ -11,7 +11,9 @@ const InputField = ({ name, value, error, onChange }) => {
     <label>
       { name }:
       <input name='linkName' type='text' value={ value } onChange={ e => onChange(e.target.value) } />
-      <span>{ error }</span>
+      <span>
+        { error }
+      </span>
     </label>
   </fieldset>
   );

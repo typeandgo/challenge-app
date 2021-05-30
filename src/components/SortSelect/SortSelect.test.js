@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { sortTypes } from 'constants/index';
-import Select from '../Select';
+import SortSelect from '../SortSelect';
 
-describe('Select', () => {
+describe('SortSelect', () => {
   const mockOnChangeFunc = jest.fn();
   const mockSelectValue = 'Lorem Ipsum';
   const mockEvent = {
@@ -12,7 +12,7 @@ describe('Select', () => {
   };
 
   test('Renders without crash and with expected structure', () => {
-    const wrapper = shallow(<Select defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
+    const wrapper = shallow(<SortSelect defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
     const options = wrapper.find('option').getElements();
 
     expect(wrapper.props().className).toEqual('select');
@@ -32,7 +32,7 @@ describe('Select', () => {
   });
 
   test('Triggering `change` event', () => {
-    const wrapper = shallow(<Select defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
+    const wrapper = shallow(<SortSelect defaultValue={ sortTypes.DESC_BY_VOTES } onChange={ mockOnChangeFunc } />);
     
     wrapper.simulate('change', mockEvent);
 

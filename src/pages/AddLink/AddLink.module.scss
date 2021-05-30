@@ -1,7 +1,7 @@
 .form {
   margin: 0 auto;
 
-  a {
+  .link {
     font-size: 12px;
     color: var(--black);
     text-decoration: none;
@@ -10,7 +10,7 @@
       text-decoration: underline;
     }
 
-    svg {
+    .icon {
       margin-right: 5px;
     }
   }

@@ -6,8 +6,10 @@ import styles from './AddLinkButton.module.scss';
 
 const AddLinkButton = () => {
   return (
-    <Link to='/add-link' className={ styles.addLinkButton } title='Submit a link'>
-      <div><FontAwesomeIcon icon={faPlus} /></div>
+    <Link to='/add-link' className={ styles.link } title='Submit a link'>
+      <div className={ styles.iconContainer }>
+        <FontAwesomeIcon icon={faPlus} />
+      </div>
       <span>SUBMIT A LINK</span>
     </Link>
   );

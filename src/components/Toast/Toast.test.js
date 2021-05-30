@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { TOAST_TIMEOUT } from 'constants/index';
 import Toast from '../Toast';
 
 describe('Toast', () => {
@@ -30,7 +31,7 @@ describe('Toast', () => {
 
     setTimeout(() => {
       expect(mockProps.onClose).toBeCalled();
-    }, 3000);
+    }, TOAST_TIMEOUT);
 
     jest.runAllTimers();
   });

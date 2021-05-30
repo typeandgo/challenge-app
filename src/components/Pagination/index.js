@@ -23,7 +23,11 @@ const Pagination = ({currentPage, pageSize, totalItems, paginate}) => {
 
   return (
     <div className={styles.pagination}>
-      <button onClick={ prevPage } title='Previous' data-test='prevButton'><FontAwesomeIcon icon={faChevronLeft} /></button>
+
+      <button onClick={ prevPage } title='Previous' data-test='prevButton'>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+
       <ul>
         { 
           pageNumbers.map(number => (
@@ -37,7 +41,11 @@ const Pagination = ({currentPage, pageSize, totalItems, paginate}) => {
           ))
         }
       </ul>
-      <button onClick={ nextPage } title='Next' data-test='nextButton'><FontAwesomeIcon icon={faChevronRight} /></button>
+
+      <button onClick={ nextPage } title='Next' data-test='nextButton'>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
+      
     </div>
   );
 }

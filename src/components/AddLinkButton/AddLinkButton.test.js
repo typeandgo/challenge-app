@@ -8,10 +8,10 @@ describe('AddLinkButton', () => {
     const wrapper = shallow(<AddLinkButton />);
   
     expect(wrapper.find('span').text()).toEqual('SUBMIT A LINK');
-    expect(wrapper.find('div')).toHaveLength(1);
+    expect(wrapper.find('.iconContainer')).toHaveLength(1);
     expect(wrapper.find(FontAwesomeIcon)).toHaveLength(1);
     expect(wrapper.props().to).toEqual('/add-link');
-    expect(wrapper.props().className).toEqual('addLinkButton');
+    expect(wrapper.props().className).toEqual('link');
     expect(wrapper.props().title).toEqual('Submit a link');
   });
 });

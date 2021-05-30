@@ -1,9 +1,12 @@
 export const classNames = obj => {
-  let finalClassNames = '';
+  
+  let classNames = '';
+
   Object.entries(obj).forEach(([key, value]) => {
     if (value) {
-      finalClassNames = finalClassNames.length > 0 ? finalClassNames + ' ' + key : key;
+      classNames = classNames.length > 0 ? classNames + ' ' + key : key;
     }
   });
-  return finalClassNames;
+  
+  return classNames;
 };
